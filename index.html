@@ -1,0 +1,55 @@
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <div class="color-picker"></div>
+  </script>
+  <script>
+
+    const pickr = Pickr.create({
+      el: '.color-picker',
+      theme: 'classic', // or 'monolith', or 'nano'
+
+      defaultRepresentation: 'RGBA',
+      showAlways: true,
+        opacity: false,
+      swatches: [
+        'rgba(11, 168, 17, 1)',
+        'rgba(204, 21, 21, 1)',
+        'rgba(0, 26, 170, 1)',
+        'rgba(0, 188, 212, 1)',
+        'rgba(255, 0, 87, 1)',
+        'rgba(55, 0, 190, 1)',
+        'rgba(0, 150, 136, 1)',
+        'rgba(188, 206, 11, 1)',
+      ],
+
+      components: {
+
+        // Main components
+        preview: true,
+        opacity: true,
+        hue: true,
+        save: true,    
+        
+        // Input / output Options
+        interaction: {
+          rgba: true,
+          hex: true,
+          input: true,
+          save: true
+
+        }
+      }
+    });
+
+    pickr.on('save', (color, instance) => {
+      let colors = [color.toRGBA()[0], color.toRGBA()[1], color.toRGBA()[2], color.toRGBA()[3]]
+      axios.post('http://127.0.0.1:3000', colors)
+      console.log(colors)
+    })
+  </script>
+</body>
