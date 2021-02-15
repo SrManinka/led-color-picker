@@ -1,4 +1,4 @@
-# Led Color Tester
+# Led Color Picker
 
 Find the rgb code for your led strip using a color picker, an Arduino and NodeJs. 
 
