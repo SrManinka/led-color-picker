@@ -2,9 +2,9 @@
 
 Find the rgb code for your led strip using a color picker, an Arduino and NodeJs. 
 
-![overview](https://im.ezgif.com/tmp/ezgif-1-715a1f38e920.gif)
+![overview](example.gif)
 
-Since i'm to lazy to do frontend [pickr](https://github.com/simonwep/pickr) were used (and i think it looks nice).
+Since i'm to lazy to do frontend [pickr](https://github.com/simonwep/pickr) were used (and because i think it looks nice).
 
 ## Preparation
 * Upload the code into Arduino 
